@@ -1,0 +1,140 @@
+<html lang="en" id="main-container">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <title>USU Feedback Form</title> -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="assets/css/form-validation.css" rel="stylesheet">
+    <style>
+        #directorySite {
+            width: 100%;
+            height: 100%;
+            overflow: scroll;
+        }
+        
+        #back-button {
+            position: fixed;
+            top: 1.5%;
+            left: 1.5%;
+            z-index: 10000;
+        }
+        .btn-group-lg>.btn, .btn-lg {
+            padding: .5rem 1rem;
+            font-size: 2em;
+            font-weight: 500;
+            line-height: 2;
+            border-radius: .5rem;
+        }
+        #s5_right_column_wrap, #s5_center_column_wrap_inner{
+            min-height: auto;
+        }
+        .search {
+            width: 100%;
+            border: 1px solid #ddd !important;
+            font-weight: 700 !important;
+            font-style: normal !important;
+            margin: 45px auto 20px;
+        }
+        .floor-maps > .row {
+            text-align: center;
+        }
+        /*#first-floor tr:nth-child(even) {
+            background-color: #DBEAAF;
+        }
+        #second-floor tr:nth-child(even) {
+            background-color: #D1EDF1;
+        }
+        #third-floor tr:nth-child(even) {
+            background-color: #E1E1ED;
+        }*/
+        #first-floor tr > :first-child,
+        #second-floor tr > :first-child,
+        #third-floor tr > :first-child {
+            font-weight: 700;
+        }
+        #first-floor td > a,
+        #second-floor td > a,
+        #third-floor td > a {
+            display: block;
+            color: #191919;
+        }
+        #first-floor td >a:hover,
+        #first-floor td >a:focus,
+        #second-floor td > a:hover,
+        #second-floor td > a:focus,
+        #third-floor td > a:hover,
+        #third-floor td > a:focus {
+            text-decoration: none;
+        }
+        .contact-info {
+            padding: 12px;
+        }
+        .contact-info .contact-description {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+        small {
+            display: inline-block;
+        }
+        .col-md-1{
+            width: 0%;
+        }
+    </style>
+</head>
+<body>
+        <img class="mx-auto d-block img-fluid" src="assets/images/ASI_App_LBSU-042.png" alt="ASI logo" />
+        <p style="padding: 2% 2% 0;">The University Student Union (USU) is known as one of the central locations for information and services for the campus. Some of the services in the USU are offered by the university or the Associated Students, Inc. (ASI), while others are provided by contracted vendors here to serve our diverse campus community. Use this page to navigate the various services offered in the USU.<!-- For floor by floor maps of the facility that include offices, rooms and entertainment venues please visit the maps page <a href='index.php?option=com_content&view=article&id=100:usu-floor-maps&catid=2:uncategorised&Itemid=246'>HERE.</a>-->
+        </p>
+        <!-- Initialize a new AngularJS app and associate it with a module consoled "instantSearch"-->
+        <div class='container-fluid' ng-app="instantSearchUSU">
+          <first-floor></first-floor>
+        </div>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+        <script src="//code.angularjs.org/1.5.8/angular-sanitize.js"></script>
+        <script src="./assets/js/usu-directory-component.js" type="text/javascript"></script>
+    
+    
+    
+    <div class="directoryWebsite">
+        <button id="back-button" type="button" class="btn btn-warning btn-lg">Go home</button>
+        <div id="directorySite"></div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+
+<script>
+    $.noConflict();
+    jQuery(document).ready(function($){
+        
+        $("#back-button").on('click touch', function() {
+            location.href="index.html";
+        });
+        var refresh;
+        var idleTimeout = 30000;
+        
+        var resetInActivity = function () {
+            
+            if (refresh) {
+                console.log('Refresh was true');
+                clearTimeout(refresh);
+            }
+            
+            refresh = setTimeout(function () {
+                location.href = 'index.html';
+            }, idleTimeout);
+            
+            console.log('resetInActivity was called', refresh);
+        };
+        
+        resetInActivity();
+        
+        $(window).on('keypress touch click mousemove scroll', function () { resetInActivity() });
+    });
+</script>
+
+</html>

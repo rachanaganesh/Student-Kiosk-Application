@@ -1,0 +1,6 @@
+<FilesMatch "submissions.html">
+AuthName "Member Only"
+AuthType Basic
+AuthUserFile "/home/asicsu5/.htpasswd"
+require valid-user
+</FilesMatch>

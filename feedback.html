@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+
+	<meta name="description" content="">
+
+	<meta name="author" content="">
+
+
+
+	<title>USU Feedback Form</title>
+
+
+
+	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+	<!-- Custom styles for this template -->
+
+	<link href="assets/css/form-validation.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<div class="container">
+
+		<div class="row">
+
+			<div class="col-md-11 order-md-1 formContent">
+
+				<img class="mx-auto d-block img-fluid" src="assets/images/ASI_App_LBSU-042.png" alt="ASI logo">
+
+				<h1 class="mb-3 text-center">Feedback Form</h1>
+
+				<div id="msgSubmit" class="h3 text-center hidden"></div>
+
+				<form id="contactForm" class="needs-validation" novalidate>
+
+					<div class="row">
+
+						<div class="col-md-6 mb-3">
+
+							<label for="fname">First name <span class="mandatoryField_css">*</span></label>
+
+							<input id="fname" name="fname" type="text" class="form-control form-control-lg" required>
+
+							<div class="invalid-feedback">
+
+								Please enter your first name.
+
+							</div>
+
+						</div>
+
+						<div class="col-md-6 mb-3">
+
+							<label for="lname">Last name </label>
+
+							<input id="lname" name="lname" type="text" class="form-control form-control-lg">
+
+							<div class="invalid-feedback">
+
+								Please enter your last name.
+
+							</div>
+
+						</div>
+
+					</div>
+
+
+
+			
+
+
+
+					<div class="mb-3">
+
+						<p>Customer type</p>
+
+						<div class="custom-control custom-checkbox custom-control-inline">
+
+							<input name="membershipType[]" type="checkbox" class="custom-control-input form-control-lg"
+								id="student" value="Student" >
+
+							<label class="custom-control-label" for="student">Student</label>
+
+						</div>
+
+						<div class="custom-control custom-checkbox custom-control-inline">
+
+							<input name="membershipType[]" type="checkbox" class="custom-control-input form-control-lg"
+								id="facultyStaff" value="Faculty or Staff">
+
+							<label class="custom-control-label" for="facultyStaff">Faculty/Staff</label>
+
+						</div>
+
+						<div class="custom-control custom-checkbox custom-control-inline">
+
+							<input name="membershipType[]" type="checkbox" class="custom-control-input form-control-lg"
+								id="alumni" value="Alumni">
+
+							<label class="custom-control-label" for="alumni">Alumni</label>
+
+						</div>
+
+						<div class="custom-control custom-checkbox custom-control-inline">
+
+							<input name="membershipType[]" type="checkbox" class="custom-control-input form-control-lg"
+								id="generalGuest" value="General Guest">
+
+							<label class="custom-control-label" for="generalGuest">General Guest</label>
+
+						</div>
+
+						<div class="invalid-feedback">
+
+							Please select a customer type.
+
+						</div>
+
+					</div>
+
+
+
+					<div class="mb-3">
+
+						<label for="feedbackAbout">What would you like to provide us feedback about?</label>
+
+						<select name="feedbackAbout" class="custom-select custom-select-lg mb-3" id="feedbackAbout" required>
+
+							<option value="">--select--</option>
+
+							<option value="department-office">Department/Office</option>
+
+							<option value="events-programs">Events/Programs</option>
+
+							<option value="facility">Facility</option>
+
+							<option value="food-services">Food services</option>
+
+							<option value="other-guest">Other guest interaction</option>
+
+							<option value="staff-Interaction">Staff interaction</option>
+
+							<option value="website">Website</option>
+
+							<option value="other">Other</option>
+
+						</select>
+
+						<div id="department" style="display: none;">
+
+							<label for="departmentDrop">Which Department</label>
+
+							<select name="department" class="custom-select custom-select-lg" id="departmentDrop" required>
+
+								<option value="" selected>--select--</option>
+
+								<option value="asi-student-government">ASI Student Government</option>
+
+								<option value="beach-pride-center">Beach Pride Center</option>
+
+								<option value="business-office">Business Office</option>
+
+								<option value="candy-corner">Candy Corner</option>
+
+								<option value="game-center">Games Center</option>
+
+								<option value="info-ticket-center">Info & Ticket Center</option>
+
+								<option value="maxson-center">Maxson Center</option>
+
+								<option value="office-multicultural-affairs">Office of Multicultural Affairs</option>
+
+								<option value="student-life-development">Student Life & Development</option>
+
+								<option value="other">Other</option>
+
+							</select>
+
+						</div>
+
+						<div id="foodService" style="display: none;">
+
+							<label for="foodServiceDrop">Which food service</label>
+
+							<select name="foodService" class="custom-select custom-select-lg" id="foodServiceDrop" required>
+
+								<option value="" selected>--select--</option>
+
+								<option value="carls-jr"> Carl's Jr.</option>
+
+								<option value="coffee-bean-tealeaf">Coffee Bean & Tea Leaf</option>
+
+								<option value="El-pollo-loco">El Pollo Loco</option>
+
+								<option value="Robeks">Robeks</option>
+
+								<option value="Sbarro">Sbarro</option>
+
+								<option value="Subway">Subway</option>
+
+							</select>
+
+						</div>
+
+						<div class="mb-3" style="display: none;" id="additionalInteraction">
+
+							<label for="additionalInteraction">Please describe where this interaction occurred.</label>
+
+							<input id="additional-Interaction" name="additionalInteraction" type="additionalInteraction"
+								class="form-control form-control-lg">
+
+							<div class="invalid-feedback">
+
+								Please enter a valid interaction.
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="mb-3">
+
+						<p>May we reach out to you to follow up?</p>
+
+						<div class="custom-control custom-radio">
+
+							<input id="yes" name="followUp" type="radio" class="custom-control-input form-control-lg"
+								value="Yes">
+
+							<label class="custom-control-label" for="yes">Yes</label>
+
+						</div>
+
+						<div class="custom-control custom-radio">
+
+							<input id="no" name="followUp" type="radio" class="custom-control-input form-control-lg"
+								value="No" checked>
+
+							<label class="custom-control-label" for="no">No</label>
+
+						</div>
+
+					</div>
+
+
+
+					<div class="mb-3" id="phoneNumberTxt" style="display: none;">
+
+						<label for="phoneNumber">Phone Number</label>
+
+						<input id="phoneNumber" type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+							class="form-control form-control-lg" placeholder="XXX-XXX-XXXX">
+
+						<div class="invalid-feedback">
+
+							Please enter a valid phone number.
+
+						</div>
+
+					</div>
+
+					<div class="mb-3" id="emailTxt" style="display: none;">
+
+						<label for="email">Email</label>
+
+						<input id="email" name="email" type="email" class="form-control form-control-lg"
+							placeholder="you@example.com">
+
+						<div class="invalid-feedback">
+
+							Please enter a valid email address.
+
+						</div>
+
+					</div>
+
+
+
+					<div class="mb-3">
+
+						<label for="comment">Please share with us your feedback. (300 character limit) <span
+								class="mandatoryField_css">*</span></label>
+
+						<span class="float-right" id="numOfCharacters">300 chars left</span>
+
+						<textarea id="comment" rows="4" name="comment" maxlength="300"
+							placeholder="Enter your feedback here" class="form-control form-control-lg"
+							required></textarea>
+
+						<div class="invalid-feedback">
+
+							Please enter feedback.
+
+						</div>
+
+					</div>
+
+
+
+					<input type="hidden" name="commentType" id="commentType" value="" />
+
+					<button id="submit" class="btn btn-primary btn-lg btn-block" type="submit">SUBMIT</button>
+
+				</form>
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+	<div id="commentTypeModal" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+		<div class="modal-dialog modal-lg modalDialog_css">
+			<div class="modal-content modalContent_css">
+				<!--<img class="mx-auto d-block img-fluid" src="assets/images/ASI_App_LBSU-042.png" alt="asi-logo">-->
+				<h1 class="display-4 font-weight-bold">HOW DID WE DO TODAY?</h1>
+				<div id="faces-container">
+					<div class="my-3 text-center commentQuality" data-id="POS">
+						<img  src="assets/images/face-positive.png" alt="Positive" />
+						<h2 class="pt-3">GOOD</h2>
+					</div>
+					<div class="my-3 text-center commentQuality" data-id="NEU">
+						<img data-id="NEU" src="assets/images/face-neutral.png" alt="Neutral" />
+						<h2 class="pt-3">OK</h2>
+					</div>
+					<div class="my-3 text-center commentQuality" data-id="NEG">
+						<img src="assets/images/face-negative.png" alt="Negative" />
+						<h2 class="pt-3">NOT SO GOOD</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="assets/js/jquery-min.js"></script>
+
+	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/form-validator.min.js"></script>
+
+	<script type="text/javascript" src="assets/js/contact-form-script.js"></script>
+
+	<script type="text/javascript" src="assets/js/submissionHandler.js"></script>
+
+	<script>
+
+		// Disables form submissions if there are invalid fields
+
+		(function () {
+
+			'use strict';
+
+
+
+			window.addEventListener('load', function () {
+
+				// Fetch all the forms we want to apply custom Bootstrap validation styles to
+
+				var forms = document.getElementsByClassName('needs-validation');
+
+
+
+				// Loop over them and prevent submission
+
+				var validation = Array.prototype.filter.call(forms, function (form) {
+
+					form.addEventListener('submit', function (event) {
+
+						if (form.checkValidity() === false) {
+
+							event.preventDefault();
+
+							event.stopPropagation();
+
+						}
+
+						form.classList.add('was-validated');
+
+					}, false);
+
+				});
+
+			}, false);
+
+		})();
+
+	</script>
+
+
+
+</body>
+
+</html>

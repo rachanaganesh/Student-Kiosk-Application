@@ -1,0 +1,137 @@
+.color-accent {
+    background-color: #ecaa00;
+    border-color: #ecaa00;
+    color: black;
+}
+
+.color-primary {
+    background-color: black;
+    border-color: black;
+    color: white;
+}
+
+.container {
+    max-width: 960px;
+}
+.border-top { border-top: 1px solid #e5e5e5; }
+.border-bottom { border-bottom: 1px solid #e5e5e5; }
+.border-top-gray { border-top-color: #adb5bd; }
+
+.box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }
+
+.lh-condensed { line-height: 1.25; }
+
+.modalContent_css {
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.modalDialog_css {
+    margin: 0;
+}
+
+.formContent {
+    margin: auto;
+}
+
+.commentTypeLbl {
+    font-weight: bold;
+}
+
+.custom-control-inline {
+    margin-right: 3rem;
+}
+
+#commentTypeModal {
+    overflow: hidden;
+}
+
+#commentTypeModal::after {
+    content: "";
+    background: url(../images/LBlogo.png) center center/contain no-repeat;
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    pointer-events: none;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.mandatoryField_css {
+    color:red;
+}
+
+.invalid-feedback {
+    font-weight: 600;
+    margin-top: 0;
+    font-size: 1rem;
+}
+
+.custom-radio .invalid-feedback {
+    margin-left: 2rem;
+}
+
+.equipmentfb {
+    font-size: 1.3rem;
+}
+
+#faces-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+@media screen and (min-height: 900px) {
+    #faces-container {
+        flex-direction: column;
+    }
+}
+.commentQuality {
+    margin: 2vh;
+    height: 15em;
+    width: 15em;
+}
+
+.commentQuality img {
+    max-width:80%;
+    max-height:80%;
+}
+
+.button-container .btn-block {
+    height: 5em;
+    margin: 2em 0;
+}
+
+.btn-block .fas {
+    width: 70px;
+    margin: 0 0.5em;
+    line-height: 1.5em;
+}
+
+.btn-title {
+    display: block;
+    font-size: 26px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.btn-content {
+    font-weight: 400;
+    font-size: 20px;
+}
+@media screen and (min-height: 900px) {
+    #home-title {
+        display: inline-block;
+        margin-bottom: 5em;
+    }
+}

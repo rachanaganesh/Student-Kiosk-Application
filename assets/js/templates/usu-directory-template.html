@@ -1,0 +1,90 @@
+<input aria-label="Search for places by their name" class="search" type="text" ng-model="searchStringUSU"
+	placeholder="Search for places by their name ..." style="width: 100%;" />
+<br /><br />
+<div ng-controller="ControllerUSU" class=" floor-maps">
+	<div ng-if="(filteredPlaces = (items | searchForPlaces:searchStringUSU)).length">
+		<div class="row justify-content-md-center">
+			<img src='/corporate/images/discover/maps-hours/1_maps.png' alt='Floor Map of 1st Floor of the USU'
+				style="height: 50%" />
+		</div>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<span class='ce-room-title text-center'>
+					First Floor
+				</span>
+				<div class="container-fluid floor-maps">
+					<div class="table-responsive">
+						<table class="table table-condensed table-hover" id="first-floor">
+							<tr ng-repeat="i in items | searchForPlaces:searchStringUSU">
+								<td ng-if="i.floor == 1" ng-bind-html="i.html" class="col-md-1"></td>
+								<td ng-if="i.floor == 1" ng-bind-html="i.html2 | to_trusted"></td>
+								<td ng-if="i.floor == 1" ng-bind-html="i.html3 | to_trusted" class="col-md-1"></td>
+								<td ng-if="i.floor == 1" ng-bind-html="i.html4" class="col-md-1"></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+	</div>
+</div>
+<br><br>
+<div class="container">
+	<div ng-controller="ControllerUSU1" class=" floor-maps">
+		<div ng-if="(filteredPlaces1 = (items1 | searchForPlaces1:searchStringUSU)).length">
+			<div class="row justify-content-md-center">
+				<img src='/corporate/images/discover/maps-hours/2_maps.png' alt='Floor Map of 2nd Floor of the USU'
+					style="height: 50%" />
+			</div>
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+					<span class='ce-room-title text-center'>Second Floor</span>
+					<div class="container-fluid floor-maps">
+						<div class="table-responsive">
+							<table class="table table-condensed table-hover" id="second-floor">
+								<tr ng-repeat="i1 in items1 | searchForPlaces1:searchStringUSU">
+									<td ng-bind-html="i1.html" class="col-md-1"></td>
+									<td ng-bind-html="i1.html2 | to_trusted"></td>
+									<td ng-bind-html="i1.html3 | to_trusted" class="col-md-1"></td>
+									<td ng-bind-html="i1.html4" class="col-md-1"></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-2"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<br><br>
+<div ng-controller="ControllerUSU2" class=" floor-maps">
+	<div ng-if="(filteredPlaces2 = (items2 | searchForPlaces2:searchStringUSU)).length">
+		<div class="row justify-content-md-center">
+			<img src='/corporate/images/discover/maps-hours/3_maps.png' alt='Floor Map of 3rd Floor of the USU'
+				style="height: 50%" />
+		</div>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+				<span class='ce-room-title text-center'>Third Floor</span>
+				<div class="container-fluid floor-maps">
+					<div class="table-responsive">
+						<table class="table table-condensed table-hover" id="third-floor">
+							<tr ng-repeat="i2 in items2 | searchForPlaces2:searchStringUSU">
+								<td ng-bind-html="i2.html" class="col-md-1"></td>
+								<td ng-bind-html="i2.html2 | to_trusted"></td>
+								<td ng-bind-html="i2.html3 | to_trusted" class="col-md-1"></td>
+								<td ng-bind-html="i2.html4" class="col-md-1"></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2"></div>
+		</div>
+	</div>
+</div>

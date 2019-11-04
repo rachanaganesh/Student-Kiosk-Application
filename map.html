@@ -1,0 +1,80 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <title>USU Feedback Form</title> -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+        integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link href="assets/css/form-validation.css" rel="stylesheet">
+    <style>
+        #directorySite {
+            width: 100%;
+            height: 100%;
+            overflow: scroll;
+            text-align: center;
+        }
+
+        #back-button {
+            position: fixed;
+            top: 1.5%;
+            left: 1.5%;
+            z-index: 10000;
+        }
+
+        .btn-group-lg>.btn, .btn-lg {
+            padding: .5rem 1rem;
+            font-size: 2em;
+            font-weight: 500;
+            line-height: 2;
+            border-radius: .5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="directoryWebsite">
+        <button id="back-button" type="button" class="btn btn-warning btn-lg">Go home</button>
+        <div id="directorySite">
+            <img src="assets/campus_map-1.png" style="height:100%;" alt="pdf">
+            <br />
+            <img src="assets/campus_map-2.png" style="height:100%;" alt="pdf">
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+
+<script>
+    (function(){
+
+        $("#back-button").on('click touch', function() {
+            location.href="index.html";
+        });
+        var refresh;
+        var idleTimeout = 30000;
+
+        var resetInActivity = function () {
+
+            if (refresh) {
+                console.log('Refresh was true');
+                clearTimeout(refresh);
+            }
+            
+            refresh = setTimeout(function () {
+                location.href = 'index.html';
+            }, idleTimeout);
+
+            console.log('resetInActivity was called', refresh);
+        };
+
+        resetInActivity();
+        
+        $("#directorySite").on('keypress touch click mousemove scroll', function () { resetInActivity() });
+
+    })();
+</script>
+
+</html>
