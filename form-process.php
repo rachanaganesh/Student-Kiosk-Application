@@ -371,13 +371,13 @@ function getHTMLEMailContent() {
 
 	return <<<'HTML'
 
-	<p>Dear SRWC Member,</p>
+	<p>Dear  Member,</p>
 
 	<p>Thank you for your feedback. We will be sure to follow up with you as you requested on the form. We appreciate your input and will continue to do our best to exceed your expectations.</p>
 
 	<p>If you have any questions, please always feel free to also email <a href='mailto:asi-srwc@csulb.edu'>asi-srwc@csulb.edu</a> or visit our front desk.</p>
 
-	<p>Sincerely,<br />Team SRWC<br />Associated Students, Inc.<br />Long Beach State University</p>
+	<p>Sincerely,<br />Team SRWC<br />
 
 HTML;
 
@@ -391,7 +391,7 @@ function getTextEmailContent() {
 
 	return <<<TEXT
 
-	Dear SRWC Member,
+	Dear Member,
 
 
 
@@ -399,17 +399,10 @@ function getTextEmailContent() {
 
 
 
-	If you have any questions, please always feel free to also email asi-srwc@csulb.edu or visit our front desk.
-
-
-
 	Sincerely,
 
 	Team SRWC
 
-	Associated Students, Inc.
-
-	Long Beach State University
 
 TEXT;
 
